@@ -175,8 +175,8 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
 
         final Button startButton = findViewById(R.id.button_start);
         final Button pairButton = findViewById(R.id.button_pair);
-        final Button patreonButton = findViewById(R.id.button_patreon);
-        final Button patreonOK = findViewById(R.id.button_confirmpatreon);
+        // final Button patreonButton = findViewById(R.id.button_patreon);
+        // final Button patreonOK = findViewById(R.id.button_confirmpatreon);
         final Button discoverhostportButton = findViewById(R.id.button_discover_hostport);
         AssetManager assetManager = getAssets();
         try {
@@ -189,15 +189,15 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
         }
         sendCommands = new SendCommands();
 
-        patreonButton.setOnClickListener(v -> {
+        /* patreonButton.setOnClickListener(v -> {
             executor.submit(() -> {
                 String url = "https://www.patreon.com/cagnulein";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
             });
-        });
+        }); */
 
-        patreonOK.setOnClickListener(v -> {
+        /* patreonOK.setOnClickListener(v -> {
             getAttributes();
             new AlertDialog.Builder(this)
                     .setTitle("Thanks!")
@@ -211,7 +211,7 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
                         }
                     })
                     .show();
-        });
+        }); */
 
         pairButton.setOnClickListener(v -> {
             executor.submit(() -> {
@@ -246,8 +246,8 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
         });
         get_saved_preferences();
 
-        licenseRequest();
-        schedulePop();
+        // licenseRequest();
+        // schedulePop();
 
         discoverhostportButton.setOnClickListener(v -> {
             AtomicInteger atomicPort = new AtomicInteger(-1);
@@ -641,9 +641,9 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
         }
     }
 
-    private Handler handlerPopup = new Handler(Looper.getMainLooper());
+    // private Handler handlerPopup = new Handler(Looper.getMainLooper());
 
-    private void licenseReply(String response) {
+    /* private void licenseReply(String response) {
         Log.d("HomeActivity", response);
         if (response.contains("OK")) {
             // Equivalent to stopping the timer
@@ -652,9 +652,9 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
         } else {
             handler.postDelayed(licenseRunnable, 10000); // 30 seconds delay
         }
-    }
+    } */
 
-    private void licenseRequest() {
+    /* private void licenseRequest() {
         runOnUiThread(() -> {
                 final EditText editText_patreon = findViewById(R.id.editText_patreon);
                 if(editText_patreon == null) {
@@ -688,18 +688,18 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
                     }
                 });
         });
-    }
+    } */
 
-    private void schedulePop() {
+    /* private void schedulePop() {
         handlerPopup.postDelayed(new Runnable() {
             @Override
             public void run() {
                 showExitPopup();
             }
         }, 5 * 60 * 1000);
-    }
+    } */
 
-    private void showExitPopup() {
+    /* private void showExitPopup() {
         context.getSharedPreferences(PREFERENCE_KEY, 0).edit().putString("Server Port", "").apply();
         context.getSharedPreferences(PREFERENCE_KEY, 0).edit().apply();
         new AlertDialog.Builder(this)
@@ -714,14 +714,14 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
                     }
                 })
                 .show();
-    }
+    } */
 
-    private Runnable licenseRunnable = new Runnable() {
+    /* private Runnable licenseRunnable = new Runnable() {
         @Override
         public void run() {
             licenseRequest();
         }
-    };
+    }; */
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {

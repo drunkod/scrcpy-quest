@@ -127,7 +127,7 @@
             android:layout_height="wrap_content"
             android:text="PAIR" />
 
-        <LinearLayout
+        <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -149,13 +149,13 @@
                 android:layout_height="wrap_content"
                 android:text="OK" />
 
-        </LinearLayout>
+        </LinearLayout> -->
 
-        <Button
+        <!-- <Button
             android:id="@+id/button_patreon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="JOIN PATREON" />
+            android:text="JOIN PATREON" /> -->
 
         <TextView
             android:layout_width="match_parent"
