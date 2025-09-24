@@ -314,7 +314,7 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
 
     public void get_saved_preferences(){
         this.context = this;
-        final EditText editText_patreon = findViewById(R.id.editText_patreon);
+        // final EditText editText_patreon = findViewById(R.id.editText_patreon);
         final EditText editTextServerHost = findViewById(R.id.editText_server_host);
         final EditText editTextServerPort = findViewById(R.id.editText_server_port);
         final EditText editTextPairPort = findViewById(R.id.editText_pair_port);
@@ -344,7 +344,7 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
         });
 
         // last one so the edit of this will not corrupt anything
-        editText_patreon.setText(context.getSharedPreferences(PREFERENCE_KEY, 0).getString("Patreon Email", ""));
+        // editText_patreon.setText(context.getSharedPreferences(PREFERENCE_KEY, 0).getString("Patreon Email", ""));
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -443,7 +443,7 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
 
     private void getAttributes() {
 
-        final EditText editText_patreon = findViewById(R.id.editText_patreon);
+        // final EditText editText_patreon = findViewById(R.id.editText_patreon);
         final EditText editTextServerHost = findViewById(R.id.editText_server_host);
         final EditText editTextServerPort = findViewById(R.id.editText_server_port);
         final EditText editTextPairPort = findViewById(R.id.editText_pair_port);
@@ -452,7 +452,7 @@ public class MainActivity extends Activity implements Scrcpy.ServiceCallbacks, S
         serverPort = editTextServerPort.getText().toString();
         pairPort = editTextPairPort.getText().toString();
         pairCode = editTextPairCode.getText().toString();
-        context.getSharedPreferences(PREFERENCE_KEY, 0).edit().putString("Patreon Email", editText_patreon.getText().toString()).apply();
+        // context.getSharedPreferences(PREFERENCE_KEY, 0).edit().putString("Patreon Email", editText_patreon.getText().toString()).apply();
         context.getSharedPreferences(PREFERENCE_KEY, 0).edit().putString("Server Address", serverAdr).apply();
         context.getSharedPreferences(PREFERENCE_KEY, 0).edit().putString("Server Port", serverPort).apply();
         final Spinner videoResolutionSpinner = findViewById(R.id.spinner_video_resolution);
